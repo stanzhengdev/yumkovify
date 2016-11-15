@@ -10,7 +10,8 @@ if __name__ == '__main__':
         # recipes =
         names = ' '.join([i['name'] for i in recipe_data])
         recipes = ' '.join([' '.join(r['ingredients'].split('\n')) for r in recipe_data])
-
+        name_model = markovify.Text(names)
+        recipe_model = markovify.Text(recipes)
         chain1 = []
         chain2 = []
         for i in range(100):
