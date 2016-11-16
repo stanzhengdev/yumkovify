@@ -8,7 +8,6 @@ models = {
     'INGREDIENT_MODEL': 'models/ingredient.json'
 }
 
-
 def files_exist():
     check = [i for i in models.values() if os.path.exists(i)]
     return True if len(check) == 2 else False
@@ -17,7 +16,7 @@ def write_json(path, data):
     with open(path, 'w') as f:
         f.write(data)
 
-def open_file(path):
+def load_json(path):
     with open(path) as data:
         return json.load(data)
 
@@ -42,7 +41,7 @@ def train(filename):
 
             return [name_model, ingredients_model]
     else:
-        return [markovify.Chain.from_json(open_file(m)) for m in models.values()]
+        return [markovify.Chain.from_json(load_json(m)) for m in models.values()]
 
 
 
