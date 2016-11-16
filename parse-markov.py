@@ -25,7 +25,7 @@ def format_recipe(name, recipe):
 {name}
 -----
 {recipe}
-""".format(name=name, recipe=recipe, combo=combo)
+""".format(name=name, recipe=recipe)
 
 def train(filename):
     if not files_exist():
