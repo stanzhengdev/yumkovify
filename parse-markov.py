@@ -22,7 +22,7 @@ def load_json(path):
 
 
 def train(filename):
-    if files_exist():
+    if not files_exist():
         with open(filename) as data:
             recipe_data = json.load(data)
 
@@ -41,12 +41,17 @@ def train(filename):
 
             return [name_model, ingredients_model]
     else:
-        return [markovify.Chain.from_json(load_json(m)) for m in models.values()]
+        return [markovify.Text.from_chain(load_json(m)) for m in models.values()]
 
 
 
 if __name__ == '__main__':
         name_model, recipe_model =  train('recipeitems-latest.json')
-        # print(name_model.make_short_sentence(100))
-        # print(recipe_model.make_sentence())
+
+        model_combo = markovify.combine([ name_model, recipe_model  ], [ 1.8, 1 ])
+        for i in range(10):
+            print(name_model.make_short_sentence(100))
+            print(recipe_model.make_sentence())
+            print("----")
+
 
