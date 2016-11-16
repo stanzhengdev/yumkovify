@@ -46,12 +46,13 @@ def train(filename):
 
 
 if __name__ == '__main__':
-        name_model, recipe_model =  train('recipeitems-latest.json')
+        recipe_model, name_model =  train('recipeitems-latest.json')
 
-        model_combo = markovify.combine([ name_model, recipe_model  ], [ 1.8, 1 ])
+        model_combo = markovify.combine([ name_model, recipe_model  ], [ 1.5, 1 ])
         for i in range(10):
-            print(name_model.make_short_sentence(100))
+            print(name_model.make_short_sentence(140))
             print(recipe_model.make_sentence())
+            #print(model_combo.make_sentence())
             print("----")
 
 
