@@ -2,6 +2,8 @@ Yumkovify
 ---
 Delicious recipes sometimes.
 
+On the first run it will train the models and place them in the `models` folder. From then it will always load from file and be faster.
+
 
 instructions
 ```
@@ -25,3 +27,5 @@ Lemonade 3 cloves garlic, diced 4x 400g tins chopped tomatoes 1 to 2 tsp. plus a
 
 ...
 ```
+
+
