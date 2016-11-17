@@ -2,7 +2,7 @@
 # Custom
 .DS_STORE
 *.gz
-recipe*.json
+*.json
 
 #Standard
 # Byte-compiled / optimized / DLL files

@@ -4,7 +4,6 @@ Delicious recipes sometimes.
 
 On the first run it will train the models and place them in the `models` folder. From then it will always load from file and be faster.
 
-
 instructions
 ```
 #download https://github.com/fictivekin/openrecipes and unzip in main directory
