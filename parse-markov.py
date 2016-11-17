@@ -27,6 +27,15 @@ def format_recipe(name, recipe):
 {recipe}
 """.format(name=name, recipe=recipe)
 
+def largest_word(sentence):
+    """Determines the largest word in a sentence"""
+    word = ''
+    for w in sentence.split():
+        if len(w) > len(word):
+           word = w
+    return word
+
+
 def train(filename):
     if not files_exist():
         with open(filename) as data:
