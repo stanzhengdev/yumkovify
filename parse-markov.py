@@ -47,10 +47,12 @@ def train(filename):
 
             return [name_model, ingredients_model]
     else:
-        return [markovify.Text.from_chain(load_json(m)) for m in models.values()]
+        return [markovify.Text.from_chain(load_json(models['NAME_MODEL'])),
+                markovify.Text.from_chain(load_json(models['INGREDIENT_MODEL']))
+        ]
 
 if __name__ == '__main__':
-        recipe_model, name_model =  train('recipeitems-latest.json')
+        name_model, recipe_model =  train('recipeitems-latest.json')
 
         # model_combo = markovify.combine([ name_model, recipe_model  ], [ 1.5, 1 ])
         for i in range(10):
