@@ -3,7 +3,6 @@
 .DS_STORE
 *.gz
 recipe*.json
-models 
 
 #Standard
 # Byte-compiled / optimized / DLL files
